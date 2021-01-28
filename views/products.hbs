@@ -1,0 +1,30 @@
+<a href="/" class="btn btn-secondary" style="float: right;">Logout</a>
+<div class="container">
+<h2 style="text-align: center;">{{title}}</h2>
+
+<a href="products/create-form" class="btn btn-success">Create Book</a>
+
+<br> <br>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Book name</th>
+        <th>Publication</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    {{#each data}}
+    <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.pub}}</td>
+        <td>{{this.price}}</td>
+        <td>
+            <a href="/products/edit-form/{{this.id}}" class="btn btn-info btn-sm" style="color:azure">Edit</a>
+            <a href="/products/delete-form/{{this.id}}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+      
+</table>
+</div>
